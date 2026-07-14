@@ -9,7 +9,7 @@ function Home() {
   const [selectedLanguage, setSelectedLanguage] = useState('Both');
   const [selectedTopic, setSelectedTopic] = useState(null);
 
-  // Set default topic to first subtopic of first main topic
+  // Set default topic to first subtopic of OOP Introduction
   useEffect(() => {
     if (topicsData.length > 0 && topicsData[0].subtopics.length > 0) {
       setSelectedTopic(topicsData[0].subtopics[0]);

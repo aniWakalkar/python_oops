@@ -22,7 +22,7 @@ function Sidebar({ topics, selectedTopic, setSelectedTopic }) {
   };
 
   return (
-    <div className="w-64 h-screen border-r p-5 overflow-y-auto bg-gray-50">
+    <div className="w-64 h-full border-r p-5 overflow-y-auto bg-gray-50">
       <h2 className="font-bold mb-4 text-lg text-gray-800">Topics</h2>
       
       <div className="space-y-2">
