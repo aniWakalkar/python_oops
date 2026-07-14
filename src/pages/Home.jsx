@@ -8,6 +8,7 @@ import topicsData from "../data/topics";
 function Home() {
   const [selectedLanguage, setSelectedLanguage] = useState('Both');
   const [selectedTopic, setSelectedTopic] = useState(null);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   // Set default topic to first subtopic of OOP Introduction
   useEffect(() => {
@@ -16,16 +17,22 @@ function Home() {
     }
   }, []);
 
+  const toggleDrawer = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+  };
+
   return (
     <>
-      <Navbar />
-      <div className="flex">
+      <Navbar toggleDrawer={toggleDrawer} />
+      <div className="flex min-h-screen">
         <Sidebar
           topics={topicsData}
           selectedTopic={selectedTopic}
           setSelectedTopic={setSelectedTopic}
+          isDrawerOpen={isDrawerOpen}
+          setIsDrawerOpen={setIsDrawerOpen}
         />
-        <div className="flex-1 p-8">
+        <div className="flex-1 p-4 md:p-8 pt-4 md:pt-8">
           <LanguageToggle
             selectedLanguage={selectedLanguage}
             setSelectedLanguage={setSelectedLanguage}
