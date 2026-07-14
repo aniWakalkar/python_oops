@@ -1,7 +1,7 @@
 function Navbar({ toggleDrawer }) {
   return (
-    <nav className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-3 md:p-4 shadow-lg sticky top-0 z-50">
-      <div className="container mx-auto flex items-center justify-between relative">
+    <nav className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-3 md:p-4 shadow-lg sticky top-0 z-50 w-full">
+      <div className="flex items-center justify-between relative max-w-7xl mx-auto px-2 md:px-4">
         {/* Hamburger Menu Button - Left Side */}
         <button
           onClick={toggleDrawer}
@@ -15,10 +15,10 @@ function Navbar({ toggleDrawer }) {
 
         {/* Centered Header */}
         <div className="flex-1 text-center">
-          <h1 className="text-xl md:text-3xl font-bold">
+          <h1 className="text-lg sm:text-xl md:text-3xl font-bold truncate">
             🐍 Python OOPs Guide
           </h1>
-          <p className="text-xs md:text-sm text-blue-100 mt-0.5 md:mt-1 hidden sm:block">
+          <p className="text-xs md:text-sm text-blue-100 mt-0.5 md:mt-1 hidden sm:block truncate">
             Comprehensive Guide to Object-Oriented Programming in Python
           </p>
         </div>

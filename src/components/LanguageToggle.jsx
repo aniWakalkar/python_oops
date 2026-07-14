@@ -11,7 +11,7 @@ function LanguageToggle({ selectedLanguage, setSelectedLanguage }) {
         <button
           key={lang.name}
           onClick={() => setSelectedLanguage(lang.name)}
-          className={`px-3 md:px-4 py-1.5 md:py-2 rounded border transition-all duration-200 text-sm md:text-base ${
+          className={`px-3 md:px-4 py-1.5 md:py-2 rounded border transition-all duration-200 text-sm md:text-base whitespace-nowrap ${
             selectedLanguage === lang.name
               ? 'bg-blue-600 text-white border-blue-600 shadow-md'
               : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50 hover:shadow'

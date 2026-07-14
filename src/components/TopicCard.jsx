@@ -28,9 +28,9 @@ function TopicCard({ topic, selectedLanguage }) {
   const showHindi = selectedLanguage === 'Hindi' || selectedLanguage === 'Both';
 
   return (
-    <div className="border rounded-lg p-4 md:p-6 shadow">
+    <div className="border rounded-lg p-4 md:p-6 shadow max-w-full overflow-hidden">
       {/* Breadcrumb */}
-      <div className="text-xs md:text-sm text-gray-500 mb-3 md:mb-4">
+      <div className="text-xs md:text-sm text-gray-500 mb-3 md:mb-4 truncate">
         {parentTopic && (
           <span>
             <span className="text-blue-600">{parentTopic}</span>
@@ -47,23 +47,23 @@ function TopicCard({ topic, selectedLanguage }) {
       {showEnglish && (
         <div className="mb-4 md:mb-6">
           <h3 className="font-semibold text-base md:text-lg text-gray-700 mb-2">📖 English Definition</h3>
-          <p className="text-sm md:text-base text-gray-800 leading-relaxed">{topic.english}</p>
+          <p className="text-sm md:text-base text-gray-800 leading-relaxed break-words">{topic.english}</p>
         </div>
       )}
       
       {showHindi && (
         <div className="mb-4 md:mb-6">
           <h3 className="font-semibold text-base md:text-lg text-gray-700 mb-2">📖 Hindi Definition</h3>
-          <p className="text-sm md:text-base text-gray-800 leading-relaxed">{topic.hindi}</p>
+          <p className="text-sm md:text-base text-gray-800 leading-relaxed break-words">{topic.hindi}</p>
         </div>
       )}
 
-      {/* Example Section */}
+      {/* Example Section with better overflow handling */}
       {topic.example && (
         <div className="mt-4 md:mt-6">
           <h3 className="font-semibold text-base md:text-lg text-gray-700 mb-2">💻 Example</h3>
-          <div className="bg-gray-900 text-white p-3 md:p-4 rounded-lg overflow-x-auto">
-            <pre className="text-xs md:text-sm font-mono leading-relaxed whitespace-pre">
+          <div className="bg-gray-900 text-white p-3 md:p-4 rounded-lg overflow-x-auto max-w-full">
+            <pre className="text-xs md:text-sm font-mono leading-relaxed whitespace-pre-wrap break-all md:break-normal">
               {topic.example}
             </pre>
           </div>

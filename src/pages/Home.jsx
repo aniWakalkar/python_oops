@@ -22,9 +22,9 @@ function Home() {
   };
 
   return (
-    <>
+    <div className="min-h-screen bg-gray-50">
       <Navbar toggleDrawer={toggleDrawer} />
-      <div className="flex min-h-screen">
+      <div className="flex min-h-[calc(100vh-4rem)]">
         <Sidebar
           topics={topicsData}
           selectedTopic={selectedTopic}
@@ -32,7 +32,7 @@ function Home() {
           isDrawerOpen={isDrawerOpen}
           setIsDrawerOpen={setIsDrawerOpen}
         />
-        <div className="flex-1 p-4 md:p-8 pt-4 md:pt-8">
+        <div className="flex-1 p-4 md:p-8 max-w-full overflow-x-hidden">
           <LanguageToggle
             selectedLanguage={selectedLanguage}
             setSelectedLanguage={setSelectedLanguage}
@@ -43,7 +43,7 @@ function Home() {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
